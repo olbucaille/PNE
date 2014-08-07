@@ -2634,3 +2634,13 @@ footer a,.contact-box:hover,#options li a.selected,header .top-bar,header .top-b
 	box-shadow: none;
 	border: none;
 }
+
+
+.menulight{
+	display : none;
+	
+	float : left;
+	width : 100%;
+
+}
+

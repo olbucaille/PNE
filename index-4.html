@@ -31,6 +31,9 @@
       <!-- Switcher CSS -->
       <link href="css/switcher.css" rel="stylesheet">
       <link href="css/spectrum.css" rel="stylesheet">
+      <!-- CSS signin -->
+       <link href="css/reset.css" rel="stylesheet">
+        <link href="css/signin_style.css" rel="stylesheet">
       <!-- Favicons -->
       <link rel="shortcut icon" href="img/ico/favicon.ico">
       <link rel="apple-touch-icon" href="img/ico/apple-touch-icon.png">
@@ -105,12 +108,36 @@
                   <!-- Logo End -->
                   <!-- Mobile Menu Start -->
                   <div class="mobile navbar-header">
-                     <a class="navbar-toggle" data-toggle="collapse" href=".html">
+                     <a class="navbar-toggle" data-toggle="collapse" href=".menulight">
                      <i class="fa fa-bars fa-2x"></i>
                      </a> 
                   </div>
                   <!-- Mobile Menu End -->
                   <!-- Menu Start -->
+                  <nav class="menulight collapse menu">
+                   <ul class="nav navbar-nav sf-menu">
+                        <li>
+                           <a id="current" href="index.html">
+                           Home
+                           </a>
+                           </li><br />
+                           <li>
+                           <a id="current" href="index.html">
+                           Home seconde
+                           </a>
+                           </li><br />
+                           <li>
+                           <a id="current" href="index.html">
+                           Home trois
+                           </a>
+                           </li><br />
+                           <li>
+                           <a id="current" href="index.html">
+                           maison
+                           </a>
+                           </li>
+                  </nav>
+                  
                   <nav class="collapse navbar-collapse menu">
                      <ul class="nav navbar-nav sf-menu">
                         <li>
@@ -216,6 +243,10 @@
                             </ul>
                          </li>
                      </ul>
+                     <ul class="main-nav nav navbar-nav sf-menu ">
+							<li><a class="cd-signin" href="#0">Sign in</a></li>
+				<li><a class="cd-signup" href="#0">Sign up</a></li>                     
+                     </ul>
                   </nav>
                   <!-- Menu End --> 
                </div>
@@ -224,6 +255,99 @@
          </header>
          <!-- Header End --> 
          <!-- Content Start -->
+         
+         <div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
+		<div class="cd-user-modal-container"> <!-- this is the container wrapper -->
+			<ul class="cd-switcher">
+				<li><a href="#0">Sign in</a></li>
+				<li><a href="#0">New account</a></li>
+			</ul>
+
+			<div id="cd-login"> <!-- log in form -->
+				<form class="cd-form">
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signin-email">E-mail</label>
+						<input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signin-password">Password</label>
+						<input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Password">
+						<a href="#0" class="hide-password">Hide</a>
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<input type="checkbox" id="remember-me" checked>
+						<label for="remember-me">Remember me</label>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width" type="submit" value="Login">
+					</p>
+				</form>
+				
+				<p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p>
+				<!-- <a href="#0" class="cd-close-form">Close</a> -->
+			</div> <!-- cd-login -->
+
+			<div id="cd-signup"> <!-- sign up form -->
+				<form class="cd-form">
+					<p class="fieldset">
+						<label class="image-replace cd-username" for="signup-username">Username</label>
+						<input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signup-email">E-mail</label>
+						<input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signup-password">Password</label>
+						<input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Password">
+						<a href="#0" class="hide-password">Hide</a>
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<input type="checkbox" id="accept-terms">
+						<label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width has-padding" type="submit" value="Create account">
+					</p>
+				</form>
+
+				<!-- <a href="#0" class="cd-close-form">Close</a> -->
+			</div> <!-- cd-signup -->
+
+			<div id="cd-reset-password"> <!-- reset password form -->
+				<p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
+
+				<form class="cd-form">
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="reset-email">E-mail</label>
+						<input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width has-padding" type="submit" value="Reset password">
+					</p>
+				</form>
+
+				<p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>
+			</div> <!-- cd-reset-password -->
+			<a href="#0" class="cd-close-form">Close</a>
+		</div> <!-- cd-user-modal-container -->
+	</div> <!-- cd-user-modal -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
          <div id="main">
             <!-- Slider Start-->
             <div class="fullwidthbanner-container">
@@ -970,56 +1094,7 @@
          <a href="#" class="scrollup"><i class="fa fa-angle-up"></i></a>
       </div>
       <!-- Wrap End -->
-      <section id="style-switcher">
-        <h2>Style Switcher <a href="#"><i class="fa fa-cog"></i></a></h2>
-        <div>
-           <h3>Predefined Colors</h3>
-           <ul class="colors">
-              <li><a title="Blue" class="blue" href="#"></a></li>
-              <li><a title="Green" class="green" href="#"></a></li>
-              <li><a title="Orange" class="orange" href="#"></a></li>
-              <li><a title="Purple" class="purple" href="#"></a></li>
-              <li><a title="Red" class="red" href="#"></a></li>
-              <li><a title="Magenta" class="magenta" href="#"></a></li>
-              <li><a title="Brown" class="brown" href="#"></a></li>
-              <li><a title="Gray" class="gray" href="#"></a></li>
-              <li><a title="Golden" class="golden" href="#"></a></li>
-              <li><a title="Teal" class="teal" href="#"></a></li>
-           </ul>
-           <h3>Layout Style</h3>
-           <div class="layout-style">
-              <select  id="layout-style">
-                 <option value="1">Wide</option>
-                 <option value="2">Boxed</option>
-              </select>
-           </div>
-           <h3>Header Color</h3>
-           <div class="header-color">
-              <input type='text' class="header-bg" />
-           </div>
-           <h3>Footer Top Color</h3>
-           <div class="header-color">
-              <input type='text' class="footer-bg" />
-           </div>
-           <h3>Footer Bottom Color</h3>
-           <div class="header-color">
-              <input type='text' class="footer-bottom" />
-           </div>
-           <h3>Background Image</h3>
-           <ul id="bg" class="colors bg">
-              <li><a class="bg1" href="#"></a></li>
-              <li><a class="bg2" href="#"></a></li>
-              <li><a class="bg3" href="#"></a></li>
-              <li><a class="bg4" href="#"></a></li>
-              <li><a class="bg5" href="#"></a></li>
-              <li><a class="bg6" href="#"></a></li>
-              <li><a class="bg7" href="#"></a></li>
-              <li><a class="bg8" href="#"></a></li>
-              <li><a class="bg9" href="#"></a></li>
-              <li><a class="bg10" href="#"></a></li>
-           </ul>
-        </div>
-     </section>
+   
       <!-- The Scripts -->
       <script src="js/jquery.min.js"></script>
       <script src="js/bootstrap.js"></script>
@@ -1040,6 +1115,8 @@
       <script src="js/spectrum.js"></script>
       <script src="js/switcher.js"></script>
       <script src="js/custom.js"></script>
+      <script src="js/main.js"></script>
+      <script src="js/modernizr.js"></script>
    </body>
 
 <!-- Mirrored from demo.fifothemes.com/pixma/Flat/index-4.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 07 Aug 2014 09:21:40 GMT -->
