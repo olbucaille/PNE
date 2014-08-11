@@ -1,0 +1,3 @@
+smart_news_home_homepage:
+    path:     /
+    defaults: { _controller: SmartNewsHomeBundle:Home:index }

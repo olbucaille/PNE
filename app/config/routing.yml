@@ -1,0 +1,4 @@
+smart_news_home:
+    resource: "@SmartNewsHomeBundle/Resources/config/routing.yml"
+    prefix:   /
+
