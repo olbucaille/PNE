@@ -1,6 +1,7 @@
 {# src/SmartNews/HomeBundle/Resources/views/layout.html.twig #}
 
 {% extends "::layout.html.twig" %}
+
 {% block title %}
 	Accueil
 {% endblock %}
@@ -13,7 +14,7 @@
                   <ul>
                      <!-- THE FIRST SLIDE -->
                      <li data-delay="6000" data-masterspeed="300" data-transition="fade">
-                        <div class="slotholder"><img src="img/slider/slider-bg-1.jpg" data-fullwidthcentering="on" alt="Pixma"></div>
+                        <div class="slotholder"><img src="{{ asset('img/slider/slider-bg-1.jpg') }}" data-fullwidthcentering="on" alt="Pixma"></div>
                         <div class="caption modern_big_bluebg h1 lft tp-caption start"
                            data-x="40"
                            data-y="85"
@@ -80,7 +81,7 @@
                      </li>
                      <!-- THE RESPONSIVE SLIDE -->
                      <li data-transition="fade" data-slotamount="1" data-masterspeed="300">
-                        <img src="img/slider/slider-bg-2.jpg" data-fullwidthcentering="on" alt="">
+                        <img src="{{ asset('img/slider/slider-bg-2.jpg') }}" data-fullwidthcentering="on" alt="">
                         <div class="caption large_text sft"
                            data-x="660"
                            data-y="54"
@@ -160,7 +161,7 @@
                            data-speed="300"
                            data-start="1400"
                            data-easing="easeOutExpo">
-                           <img src="img/slider/responsive-imac.png" alt="iMac Responsive">
+                           <img src="{{asset('img/slider/responsive-imac.png') }}" alt="iMac Responsive">
                         </div>
                         <div class="caption lfl"
                            data-x="323"
@@ -168,7 +169,7 @@
                            data-speed="300"
                            data-start="1500"
                            data-easing="easeOutExpo">
-                           <img src="img/slider/responsive-ipad.png" alt="iPad Responsive">
+                           <img src="{{ asset('img/slider/responsive-ipad.png') }}" alt="iPad Responsive">
                         </div>
                         <div class="caption lfl"
                            data-x="472"
@@ -176,7 +177,7 @@
                            data-speed="300"
                            data-start="1600"
                            data-easing="easeOutExpo">
-                           <img src="img/slider/responsive-iphone.png" alt="iPhone Responsive">
+                           <img src="{{asset('img/slider/responsive-iphone.png') }}" alt="iPhone Responsive">
                         </div>
                      </li>
                   </ul>
