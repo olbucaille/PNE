@@ -1,15 +1,37 @@
-{% extends "::layout.html.twig" %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+         <link href='http://fonts.googleapis.com/css?family=Lato:400,300,400italic,700,300italic' rel='stylesheet' type='text/css'>
+         <!-- Library CSS -->
+         <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+         <link rel="stylesheet" href="{{ asset('css/bootstrap-theme.css') }}">
+         <link rel="stylesheet" href="{{ asset('css/fonts/font-awesome/css/font-awesome.css') }}">
+         <link rel="stylesheet" href="{{ asset('css/animations.css') }}" media="screen">
+         <link rel="stylesheet" href="{{ asset('css/superfish.css') }}" media="screen">
+         <link rel="stylesheet" href="{{ asset('css/revolution-slider/css/settings.css') }}" media="screen">
+         <link rel="stylesheet" href="{{ asset('css/prettyPhoto.css') }}" media="screen">
+         <!-- Theme CSS -->
+         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+         <!-- Skin -->
+         <link rel="stylesheet" href="{{ asset('css/colors/blue.css') }}" class="colors">
+         <!-- Responsive CSS -->
+         <link rel="stylesheet" href="{{ asset('css/theme-responsive.css') }}">
+         <!-- CSS signin -->
+         <link href="{{ asset('css/reset.css') }}" rel="stylesheet">
+         <link href="{{ asset('css/signin_style.css') }}" rel="stylesheet">
+    </head>
+    <body>
+        {% for type, messages in app.session.flashbag.all() %}
+            {% for message in messages %}
+                <div class="flash-{{ type }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
 
-{% block title %}Connexion{% endblock %}
-
-{% block body %}
-
-	  {# On affiche les messages flash que définissent les contrôleurs du bundle #}
-	  {% for key, message in app.session.flashbag.all() %}
-	    <div class="alert alert-{{ key }}">
-	      {{ message|trans({}, 'FOSUserBundle') }}
-	    </div>
-	  {% endfor %}
-
-    {% block fos_user_content %}{% endblock %}
-{% endblock %}
+        {% block fos_user_content %}
+        {% endblock fos_user_content %}
+    </body>
+</html>

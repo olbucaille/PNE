@@ -1,0 +1,37 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% if error %}
+    <div class="alert alert-danger" role="alert">{{ error|trans }}</div>
+{% endif %}
+
+<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="cd-form fos_user_registration_register">
+	{{ form_errors(form) }}
+
+        <p class="fieldset">
+        	<label class="image-replace cd-username" for="signup-username">Pseudo</label>
+            <input type="text" id="fos_user_registration_form_username" name="fos_user_registration_form[username]" class="full-width has-padding has-border form-control" placeholder="Pseudo" required="required" maxlength="255">
+            {% if form_errors(form.username) %}<div class="alert alert-danger">{{ form_errors(form.username) }}</div>{% endif %}
+        </p>
+
+        <p class="fieldset">
+        	<label class="image-replace cd-email" for="signup-username">Mail</label>
+            <input type="email" id="fos_user_registration_form_email" name="fos_user_registration_form[email]" class="full-width has-padding has-border form-control" placeholder="E-Mail" required="required">
+            {% if form_errors(form.email) %}<div class="alert alert-danger">{{ form_errors(form.email) }}</div>{% endif %}
+        </p>
+        <p class="fieldset">
+        	<label class="image-replace cd-password" for="signup-username">Mot de passe</label>
+            <input type="password" id="fos_user_registration_form_plainPassword_first" name="fos_user_registration_form[plainPassword][first]" class="full-width has-padding has-border form-control" placeholder="Mot de passe" required="require">
+            {% if form_errors(form.plainPassword.first) %}<div class="alert alert-danger">{{ form_errors(form.plainPassword.first) }}</div>{% endif %}
+        </p>
+        <p class="fieldset">
+        	<label class="image-replace cd-password" for="signup-username">Vérification</label>
+            <input type="password" id="fos_user_registration_form_plainPassword_second" name="fos_user_registration_form[plainPassword][second]" class="full-width has-padding has-border form-control" placeholder="Mot de passe"required="required">
+            {% if form_errors(form.plainPassword.second) %} <div class="alert alert-danger">{{ form_errors(form.plainPassword.second) }}</div>{% endif %}
+        </p>
+
+	    <p class="fieldset">
+	        <input type="submit" class="full-width has-padding" value="{{ 'registration.submit'|trans }}" />
+	    </p>
+
+   		{{ form_row(form._token) }} 
+</form>
