@@ -198,8 +198,8 @@
                          </li>
                      </ul>
                      <ul class="main-nav nav navbar-nav sf-menu ">
-                        							<li><a data-toggle="modal" class="cd-signin" href="/PNE/web/login" data-target="#loginModal">Connexion</a></li>
-   				         <li><a data-toggle="modal" class="cd-signup" href="/PNE/web/register/" data-target="#signupModal">Inscription</a></li>   
+                        <li><a class="cd-signin" href="{{ path('fos_user_security_login') }}">Connexion</a></li>
+   				         <li><a class="cd-signup" href="{{ path('fos_user_registration_register') }}">Inscription</a></li>   
                                        
                      </ul>
                   </nav>
@@ -208,23 +208,6 @@
             </div>
             <!-- Main Header End -->
          </header>
-         <!-- Header End --> 
-          <div class="modal fade cd-user-modal" id="loginModal" role="dialog"> <!-- this is the entire modal form, including the background -->
-            <div class="cd-user-modal-container"> <!-- this is the container wrapper -->
-               <div class="modal-content"> <!-- log in form -->
-                  <div class="modal-body"></div>
-               </div> <!-- cd-login -->
-               <a href="#0" class="cd-close-form">Fermer</a>
-            </div> <!-- cd-user-modal-container -->
-         </div> <!-- cd-user-modal -->
-         <div class="modal fade cd-user-modal" id="signupModal" role="dialog"> <!-- this is the entire modal form, including the background -->
-            <div class="cd-user-modal-container"> <!-- this is the container wrapper -->
-               <div class="modal-content"> <!-- log in form -->
-                  <div class="modal-body"></div>
-               </div> <!-- cd-login -->
-               <a href="#0" class="cd-close-form">Fermer</a>
-            </div> <!-- cd-user-modal-container -->
-         </div> <!-- cd-user-modal -->
 		  {% block body %}
 		  {% endblock %}
 		 <!-- Footer Start -->
