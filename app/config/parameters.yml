@@ -1,0 +1,16 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: pdo_mysql
+    database_host: 37.59.105.180
+    database_port: 3306
+    database_name: smartNews
+    database_user: database
+    database_password: 3Fmxw7D7
+    mailer_transport: smtp
+    mailer_auth_mode: login
+    mailer_host: localhost
+    mailer_user: admin
+    mailer_password: azerty
+    mailer_port: 25
+    locale: fr
+    secret: 3Fmxw7D7
