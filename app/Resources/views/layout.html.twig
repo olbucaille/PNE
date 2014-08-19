@@ -155,20 +155,20 @@
                            </span>
                            </a>
                            <ul>
-                              <li><a href="xxx.html" class="sf-with-ul">catégories</a></li>
-                              <li><a href="xxxx.html" class="sf-with-ul">écrire un article</a></li>
+                              <li><a href="xxx.html" class="sf-with-ul">catÃ©gories</a></li>
+                              <li><a href="xxxx.html" class="sf-with-ul">Ã©crire un article</a></li>
                             </ul>
                         </li>
                         <li>
                            <a href="#" class="sf-with-ul">
-                           Abonnés
+                           AbonnÃ©s
                            <span class="sf-sub-indicator">
                            <i class="fa fa-angle-down "></i>
                            </span>
                            </a>
                              <ul>
                               <li><a href="xxx.html" class="sf-with-ul">Rechercher</a></li>
-                              <li><a href="xxxx.html" class="sf-with-ul">créer un profil</a></li>
+                              <li><a href="xxxx.html" class="sf-with-ul">crÃ©er un profil</a></li>
                             </ul>
                         </li>
                         <li>
@@ -180,7 +180,7 @@
                            </a>
                              <ul>
                               <li><a href="xxx.html" class="sf-with-ul">Rechercher</a></li>
-                              <li><a href="xxxx.html" class="sf-with-ul">créer un profil</a></li>
+                              <li><a href="xxxx.html" class="sf-with-ul">crÃ©er un profil</a></li>
                             </ul>
                         </li>
                         <li><a href="#">
@@ -198,8 +198,16 @@
                          </li>
                      </ul>
                      <ul class="main-nav nav navbar-nav sf-menu ">
-                        <li><a class="cd-signin" href="{{ path('fos_user_security_login') }}">Connexion</a></li>
-   				         <li><a class="cd-signup" href="{{ path('fos_user_registration_register') }}">Inscription</a></li>   
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                           <li><a class="sf-with-ul">Panneau de {{ app.user.username }}
+                           <span class="sf-sub-indicator">
+                           <i class="fa fa-angle-down "></i>
+                           </span></a></li>
+                           <li><a class="cd-signin" href="{{ path('fos_user_security_logout') }}">DÃ©connexion</a></li>
+                        {% else %}
+                           <li><a class="cd-signin" href="{{ path('fos_user_security_login') }}">Connexion</a></li>
+      				         <li><a class="cd-signup" href="{{ path('fos_user_registration_register') }}">Inscription</a></li> 
+                        {% endif %}   
                                        
                      </ul>
                   </nav>
