@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new SmartNews\HomeBundle\SmartNewsHomeBundle(),
             new SmartNews\UserBundle\SmartNewsUserBundle(),
 			new FOS\UserBundle\FOSUserBundle(),
+            new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -7,10 +7,10 @@ parameters:
     database_user: database
     database_password: 3Fmxw7D7
     mailer_transport: smtp
-    mailer_auth_mode: login
     mailer_host: localhost
     mailer_user: admin
     mailer_password: azerty
-    mailer_port: 25
     locale: fr
     secret: 3Fmxw7D7
+    oauth.facebook.id: "1449123592016932"
+    oauth.facebook.secret: "7f1f9e1f6a682eb03a9fff22c232fb16"
