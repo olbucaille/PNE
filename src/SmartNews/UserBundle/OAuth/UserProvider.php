@@ -45,16 +45,15 @@ class UserProvider extends FOSUBUserProvider
 	 * @return User
 	 */
 	protected function createUserByOAuthUserResponse(UserResponseInterface $response)
-	{
-		var_dump($response->getEmail());
-		
+	{	
 		$user = $this->userManager->createUser();
 		$this->updateUserByOAuthUserResponse($user, $response);
 		// set default values taken from OAuth sign-in provider account
+		$user->setFacebookId = $response->getUsername();
 		if (null !== $email = $response->getEmail()) {
 			$user->setEmail($email);
 		}
-		if (null === $this->userManager->findUserByUsername($response->getNickname())) {
+		if (null === $this->userManager->findUserByUsername($response->getRealName())) {
 			$user->setUsername($response->getRealName());
 		}
 		$user->setEnabled(true);

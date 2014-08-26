@@ -29,7 +29,7 @@
 </form>
 
 <p class="cd-form-bottom-message"><a href="#0">Mot de passe oublié ?</a></p>
-<p> Ou sur facebook : 
-	{{ render(url('hwi_oauth_connect')) }}
-</p>
+
+    {% render(controller('HWIOAuthBundle:Connect:connect')) %}
+
 {% endblock fos_user_content %}
